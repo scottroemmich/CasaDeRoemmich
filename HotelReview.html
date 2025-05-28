@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>REVIEW: Casa De Roemmich</title>
+    <meta charset="utf-8">
+    <style>
+      .wmkText {
+        position: fixed;
+        top: 50px;
+        text-align: center;
+        color: black;
+        font-family: Arial, sans-serif;
+      }
+      .watermark img {
+        opacity: 0.3;
+        color: BLACK;
+        position: relative;
+        top: auto;
+        /* left: 80%; */
+        width: 100%;
+      }
+      .radio-group {
+        padding-left: 30px;
+        padding-right: 30px;
+        text-align: left;
+        
+      }
+
+    </style>
+    <script>
+      function showQ_01(answer) {
+        document.getElementById('Fav_part_1a').style.display = answer === 'excellent' ? 'block' : 'none';
+        document.getElementById('Fav_part_1aa').style.display = answer === 'excellent' ? 'block' : 'none';
+        document.getElementById('Q_01_b').style.display = answer === 'good' ? 'block' : 'none';
+        document.getElementById('Q_01_c').style.display = answer === 'meh' ? 'block' : 'none';
+        document.getElementById('Request_Refund_1d').style.display = answer === 'poor' ? 'block' : 'none';
+        document.getElementById('Request_Refund_1dd').style.display = answer === 'poor' ? 'block' : 'none';
+      }
+
+      function showRefund(answer) {
+        document.getElementById('refund_yes').style.display = 'none';
+        const selected = document.getElementById('Request_Refund_1dd').value;
+        // Show the corresponding paragraph
+        if (selected === 'refund_yes') {
+          document.getElementById('refund_yes').style.display = 'block';
+        }
+      }
+    </script>
+  </head>
+  <main>
+    <body> 
+      <div class="watermark">
+        <!-- <img src="Hotel.jpeg"> -->
+         <img src="https://github.com/scottroemmich/WebsiteImages/blob/186e17bd6ffe9ff49f6814a069816b852b605d3d/Hotel.jpeg?raw=true" alt="Hotel De Roemmich">
+         <img src="https://github.com/scottroemmich/WebsiteImages/blob/main/Hotel2.jpeg?raw=true" alt="Hotel De Roemmich">
+         <img src="https://github.com/scottroemmich/WebsiteImages/blob/main/Hotel3.jpeg?raw=true" alt="Hotel De Roemmich">
+         <img src="https://github.com/scottroemmich/WebsiteImages/blob/main/Hotel4.jpeg?raw=true" alt="Hotel De Roemmich">
+      </div> 
+      <div class="wmkText">
+        <h1>Please share your opinion with us!</h1>
+        <p>Welcome to our hotel review page! We value your feedback and would love to hear about your experience at <em>Casa De Roemmich</em>. Please kindly take a moment to share your thoughts with us.</p>
+        <br>
+
+        <div>
+          <form class="radio-group" action="https://formsubmit.co/sroemmic13@gmail.com" method="POST">
+
+
+
+
+            <p>1). How would you rate your overall experience staying at our hotel?</p>
+            <label>
+              <input type="radio" name="Overall_Experience" value="excellent" align="left" onclick="showQ_01('excellent')" required> Excellent
+            </label><br>
+            <label>
+              <input type="radio" name="Overall_Experience" value="good" onclick="showQ_01('good')" required> Good
+            </label><br>
+            <label>
+              <input type="radio" name="Overall_Experience" value="meh" onclick="showQ_01('meh')" required> Meh
+            </label><br>
+            <label>
+              <input type="radio" name="Overall_Experience" value="poor" onclick="showQ_01('poor')" required> Could Use Improvement
+            </label><br> 
+            
+            <!-- Paragraphs to show/hide -->
+            <p id="Fav_part_1a" style="display: none;">1a). <b><span style="color: red;">BET!!!</span></b> What was your favorite part?</p>
+            <label id="Fav_part_1aa" style="display: none;">
+              <input type="radio" name="Fav_part_1a" value="Menna"> Menna<br>
+              <input type="radio" name="Fav_part_1a" value="Scotty"> Scotty<br>
+              <input type="radio" name="Fav_part_1a" value="View"> The View<br>
+              <input type="radio" name="Fav_part_1a" value="Mattress"> The Mattress<br>
+              <input type="radio" name="Fav_part_1a" value="Food"> The Food<br>
+              <input type="radio" name="Fav_part_1a" value="Fitness_Center"> Fitness Center<br>
+              <input type="radio" name="Fav_part_1a" value="Pool"> The Pool<br>
+            </label>
+            
+            <p id="Q_01_b" style="display: none;"><b><span style="color: green;">Cool 😄 Cool 😄 Cool 😄 Cool 😄 Cool 😄 Cool 😄!!!</span></b></p>
+            
+            <p id="Q_01_c" style="display: none;"><b><span style="color: rgb(239, 91, 37);">Bummer Dudes and Dudets!!!</span></b></p>
+            
+            <p id="Request_Refund_1d" style="display: none;">1a). <b><span style="color: red;">Would you like a refund?</span></b></p>
+            <select id="Request_Refund_1dd" style="display: none;" onchange="showRefund()">
+              <option></option>
+              <option value="refund_yes">Yes</option>
+              <option value="refund_no">No</option>
+            </select>
+
+            <p id="refund_yes" style="display: none; color: green; font-size: xx-large"><b>Sorry, it was FREE! You will get NO money...</b></p><br>
+
+
+
+
+
+            <p>2). What is your age range?</p>
+            <select name="Age_Range" required>
+              <option></option>
+              <option value="under18">Under 18</option>
+              <option value="18-24">18–24</option>
+              <option value="25-34">25–34</option>
+              <option value="35-44">35-44</option>
+              <option value="45-54">45-54</option>
+              <option value="55-64">55-64</option>
+              <option value="65+">65+</option>
+            </select><br><br>
+
+
+
+
+
+            <p>3). Any <em><b>NICE</b></em> comments?</p>
+            <textarea name="Comments" rows="4" cols="40" required></textarea><br><br>
+
+
+
+
+
+            <p>4). <b>LASTLY</b>, would you personally recommend one of your family members to stay at <em>Casa De Roemmich</em>?</p>
+              <select name="RecommendToFamily" required>
+              <option></option>
+              <option value="Most_Certainly">Most Certainly</option>
+              <option value="Sure">Sure</option>
+              <option value="Probably_Not">Probably Not</option>
+              <option value="Doubtful">Doubtful</option>
+            </select><br><br>
+            
+
+
+
+            <br><input type="submit" value="Submit" required>
+          </form>
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </body>
+  </main>
+</html>
+
+
